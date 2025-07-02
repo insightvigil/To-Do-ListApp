@@ -36,3 +36,11 @@ function addTask() {
   inputBox.value = "";
 }
 
+checkbox.addEventListener("click", ()=> {
+    li.classList.toggle("completed", checkbox.checked);
+})
+
+
+
+
+
