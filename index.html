@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./CSS/style.css">
+        <title>To-Do List</title>
+    </head>
+    <body>
+        <!-- create a container for the todo list -->
+        <div id="todo-container">
+            <!-- Todo list header -->
+            <div id="header">
+                <h1>Todo List</h1>
+            </div>
+
+            <!-- create input box -->
+            <div id="todo-form">
+                <input
+                    type="text"
+                    class="input-item"
+                    name="input_box"
+                    id="input-box"
+                    placeholder="add Task" />
+
+                <!-- add button -->
+                <button id="input-button" onclick="addTask()">Add</button>
+            </div>
+
+            <!-- task list -->
+            <h2>Task List</h2>
+            <ul id="list-container"></ul>
+        </div>
+
+        <script type="text/javascript" src="script.js"></script>
+
+    </body>
+</html>
