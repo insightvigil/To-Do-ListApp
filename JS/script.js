@@ -39,6 +39,8 @@ function addTask() {
 
   checkbox.addEventListener("click", ()=> {
     li.classList.toggle("completed", checkbox.checked);
+    //Actualización en cuánto se completa una tarea
+    updateCounters();
   })
 
 //Función Edit Button
@@ -47,9 +49,25 @@ editBtn.addEventListener("click", function () {
   if (update !== null) {
     taskSpan.textContent = update;
     li.classList.remove("completed");
+    //Actualización en cuánto se edita una tarea
+    checkbox.checked = false;
+    updateCounters();
   }
 });
 
+
+  //appendChild sirve para agregar un nuevo nodo(elemento) como hijo de otro nodo(elemento) del Dom
+  //NOTA: En javaScript no es necesario poner el ; al fnalizar una linea de codigo, pero aveces puede causar problemas al utilizar herramientas como ESLint y puedo ocacionar bugs dificiles de encontrar
+  //SINTAXIS: padre.appendChild(hijo);
+  listContainer.appendChild(li);
+  inputBox.value = "";
+  
+  //Actualización en cuanto se agrega un nuevo li
+  updateCounters();
+  
+}
+
+//Función para actualizar los contadores
 function updateCounters() {
   const completedTasks = document.querySelectorAll(".completed").length;
   const uncompletedTasks =
@@ -58,15 +76,6 @@ function updateCounters() {
   completedCounter.textContent = completedTasks;
   uncompletedCounter.textContent = uncompletedTasks;
 }
-  //appendChild sirve para agregar un nuevo nodo(elemento) como hijo de otro nodo(elemento) del Dom
-  //NOTA: En javaScript no es necesario poner el ; al fnalizar una linea de codigo, pero aveces puede causar problemas al utilizar herramientas como ESLint y puedo ocacionar bugs dificiles de encontrar
-  //SINTAXIS: padre.appendChild(hijo);
-  listContainer.appendChild(li);
-  inputBox.value = "";
-}
-
-
-
 
 
 
