@@ -1,6 +1,7 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
 
+//Update Task Counters, variables selectoras
 const completedCounter = document.getElementById("completed-counter");
 const uncompletedCounter = document.getElementById("uncompleted-counter");
 
@@ -49,14 +50,22 @@ editBtn.addEventListener("click", function () {
   }
 });
 
+function updateCounters() {
+  const completedTasks = document.querySelectorAll(".completed").length;
+  const uncompletedTasks =
+    document.querySelectorAll("li:not(.completed)").length;
 
-
+  completedCounter.textContent = completedTasks;
+  uncompletedCounter.textContent = uncompletedTasks;
+}
   //appendChild sirve para agregar un nuevo nodo(elemento) como hijo de otro nodo(elemento) del Dom
   //NOTA: En javaScript no es necesario poner el ; al fnalizar una linea de codigo, pero aveces puede causar problemas al utilizar herramientas como ESLint y puedo ocacionar bugs dificiles de encontrar
   //SINTAXIS: padre.appendChild(hijo);
   listContainer.appendChild(li);
   inputBox.value = "";
 }
+
+
 
 
 
