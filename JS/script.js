@@ -55,6 +55,14 @@ editBtn.addEventListener("click", function () {
   }
 });
 
+//Funcion para eliminar tarea
+deleteBtn.addEventListener("click", function () {
+  if(confirm("Are you sure want to delete this task?")){
+    li.remove();
+    updateCounters();
+  }
+});
+
 
   //appendChild sirve para agregar un nuevo nodo(elemento) como hijo de otro nodo(elemento) del Dom
   //NOTA: En javaScript no es necesario poner el ; al fnalizar una linea de codigo, pero aveces puede causar problemas al utilizar herramientas como ESLint y puedo ocacionar bugs dificiles de encontrar
@@ -77,7 +85,4 @@ function updateCounters() {
   uncompletedCounter.textContent = uncompletedTasks;
 }
 
-
-
-
-
+updateCounters();
